@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard | Versa</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">Versa Dashboard</a>
+            <button id="logout-btn" class="btn btn-outline">Logout</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="stats-grid">
+            <div class="card">
+                <h3>Free Trials Remaining</h3>
+                <h2 id="trials-count" style="color:var(--primary); font-size:2.5rem;">...</h2>
+            </div>
+            <div class="card">
+                <h3>Active Orders</h3>
+                <h2 id="active-count" style="font-size:2.5rem;">...</h2>
+            </div>
+        </div>
+
+        <hr style="margin: 20px 0; border:0; border-top:1px solid #e2e8f0;">
+
+        <h2>Book a Service</h2>
+        <div class="service-grid">
+            <button class="btn btn-outline" onclick="openBooking('Video Editing')">🎬 Video Editing</button>
+            <button class="btn btn-outline" onclick="openBooking('Graphic Design')">🎨 Graphic Design</button>
+            <button class="btn btn-outline" onclick="openBooking('Music Editing')">🎵 Music Editing</button>
+            <button class="btn btn-outline" onclick="openBooking('Development')">💻 Development</button>
+        </div>
+
+        <div id="booking-form-container" class="hidden booking-container">
+            <h3 id="form-service-title">New Booking</h3>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" id="bk-phone" required>
+                </div>
+                
+                <div id="dynamic-fields"></div>
+
+                <div class="form-group">
+                    <label>Description / Instructions *</label>
+                    <textarea id="bk-desc" rows="4" required placeholder="Describe exactly what you need..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>File Link (Google Drive / DropBox)</label>
+                    <input type="url" id="bk-link" placeholder="https://...">
+                </div>
+
+                <div id="payment-section" class="hidden payment-alert">
+                    <p><strong>Free trials exhausted.</strong></p>
+                    <p>Please Pay to UPI: <span class="upi-highlight">9239529167@fam</span></p>
+                    <label style="margin-top:10px;">Enter UPI Transaction ID (UTR) *</label>
+                    <input type="text" id="bk-utr" placeholder="e.g. 321456789012">
+                </div>
+
+                <div style="display:flex; gap:10px;">
+                    <button type="submit" class="btn btn-primary">Submit Order</button>
+                    <button type="button" class="btn btn-outline" onclick="document.getElementById('booking-form-container').classList.add('hidden')">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <hr style="margin: 40px 0; border:0; border-top:1px solid #e2e8f0;">
+
+        <h2>Your Orders</h2>
+        <div id="orders-list">
+            <p>Loading orders...</p>
+        </div>
+    </div>
+
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Versa</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body style="background: #f1f5f9;">
+    <header style="background:#1e293b; color:white;">
+        <nav>
+            <a href="#" class="logo" style="color:white;">Versa Admin</a>
+            <button id="logout-btn" class="btn btn-danger">Logout</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="stats-grid">
+            <div class="card">
+                <h3>Total Orders</h3>
+                <h2 id="total-orders">0</h2>
+            </div>
+            <div class="card">
+                <h3>Pending Review</h3>
+                <h2 id="pending-orders" style="color:var(--danger)">0</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Manage Orders</h3>
+            <div id="admin-orders-list">
+                </div>
+        </div>
+        
+        <div class="card" style="margin-top:20px;">
+            <h3>Base Pricing Settings</h3>
+            <div class="form-group">
+                <label>Video Base Price (₹)</label>
+                <input type="number" id="price-video" placeholder="Loading...">
+            </div>
+            <div class="form-group">
+                <label>Graphic Base Price (₹)</label>
+                <input type="number" id="price-graphic">
+            </div>
+            <button id="save-pricing" class="btn btn-primary">Update Prices</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>
