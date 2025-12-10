@@ -1,0 +1,81 @@
+:root {
+    --primary: #6200ea;
+    --secondary: #00e5ff;
+    --bg: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --text: #ffffff;
+    --text-muted: #aaaaaa;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+body { background-color: var(--bg); color: var(--text); padding-bottom: 50px; }
+
+/* Utilities */
+.hidden { display: none !important; }
+.btn { 
+    background: linear-gradient(45deg, var(--primary), #3700b3); 
+    color: white; border: none; padding: 10px 20px; 
+    border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 10px;
+}
+input, select, textarea {
+    width: 100%; padding: 12px; margin: 8px 0; 
+    background: #2a2a2a; border: 1px solid #444; color: white; border-radius: 5px;
+}
+a { color: var(--secondary); text-decoration: none; }
+
+/* Login / Landing */
+#auth-container {
+    max-width: 400px; margin: 50px auto; padding: 20px;
+    background: var(--card-bg); border-radius: 10px; box-shadow: 0 0 20px rgba(98, 0, 234, 0.3);
+    text-align: center;
+}
+
+/* Dashboard Header */
+header {
+    background: #121212; padding: 20px; display: flex; 
+    justify-content: space-between; align-items: center; border-bottom: 1px solid #333;
+}
+.logo-area { display: flex; align-items: center; gap: 10px; }
+.logo-area img { width: 40px; height: 40px; border-radius: 50%; }
+
+/* Sections */
+.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+h2 { border-left: 4px solid var(--secondary); padding-left: 10px; margin: 20px 0; }
+
+/* Service Grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.card {
+    background: var(--card-bg); padding: 20px; border-radius: 10px;
+    border: 1px solid #333; transition: 0.3s;
+}
+.card:hover { border-color: var(--secondary); transform: translateY(-5px); }
+.card h3 { color: var(--secondary); margin-bottom: 10px; }
+
+/* Modal */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center;
+    z-index: 1000; overflow-y: auto;
+}
+.modal-content {
+    background: var(--card-bg); padding: 20px; border-radius: 10px; width: 90%; max-width: 500px;
+    max-height: 90vh; overflow-y: auto; border: 1px solid var(--secondary);
+}
+.close { float: right; font-size: 24px; cursor: pointer; }
+
+/* Order List */
+.order-item {
+    background: #222; padding: 15px; margin-bottom: 10px; border-radius: 5px;
+    border-left: 3px solid #555;
+}
+.status-received { border-color: yellow; }
+.status-progress { border-color: blue; }
+.status-delivered { border-color: green; }
+
+/* Footer */
+footer { text-align: center; margin-top: 50px; padding: 20px; color: var(--text-muted); font-size: 0.9em; border-top: 1px solid #333; }
+.social-links a { margin: 0 10px; font-size: 1.2em; }
+
+/* Admin Specific */
+.admin-controls { background: #220033; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
